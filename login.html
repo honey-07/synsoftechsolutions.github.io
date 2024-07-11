@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div id="gradient-bg">
+        <div calss="gradient-container">
+            <div class="gradient1"></div>
+            <div class="gradient2"></div>
+            <div class="gradient3"></div>
+            <div class="gradient4"></div>
+            <div class="gradient5"></div>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div id="form-container">
+        <legend>
+            <h1 class="title">
+                Log in
+            </h1>
+        </legend>
+
+        <form action="authenticate.php" method="post">
+
+            <div class="label">Username</div>
+            <input type="text" id="username" name="username" required />
+            <div class="label">Password</div>
+            <input type="password" id="password" name="password" required />
+            <input type="submit" class="submit" value="Login" />
+        </form>
+    </div>
+
+</body>
+<script>
+    // Check if there is an error query parameter in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('error') && urlParams.get('error') === '1') {
+        // Display an alert popup for an invalid username or password
+        alert('Invalid username or password');
+    }
+</script>
+
+</html>
